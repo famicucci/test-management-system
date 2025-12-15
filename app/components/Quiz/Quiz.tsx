@@ -1,34 +1,38 @@
 "use client";
-import { useQuestion } from "@/store";
-import { useState } from "react";
+import { useQuestion } from "@/store/question";
+import { useEffect, useState } from "react";
 
 export default function Quiz() {
   const questions = useQuestion((state) => state.questions);
   const current = useQuestion((state) => state.currentQuestion);
   const setCurrent = useQuestion((state) => state.setCurrentQuestion);
 
-  const [selected, setSelected] = useState<number | null>(null);
+  const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [score, setScore] = useState(0);
 
-  const handleOptionClick = (idx: number) => {
-    setSelected(idx);
+  const selectQuestion = (arrLength: number) => {
+    return Math.floor(Math.random() * arrLength);
+  };
+
+  useEffect(() => {
+    if (current === null) {
+      setCurrent(selectQuestion(questions.length));
+    }
+  }, [current, setCurrent]);
+
+  if (current === null) return null;
+
+  const onSelectOption = (idx: number) => {
+    setSelectedOption(idx);
     if (idx === questions[current].answer) {
       setScore(score + 1);
     }
   };
 
   const nextQuestion = () => {
-    setSelected(null);
-    setCurrent(current + 1);
+    setSelectedOption(null);
+    setCurrent(selectQuestion(questions.length));
   };
-
-  if (current >= questions.length) {
-    return (
-      <div>
-        Your score: {score} / {questions.length}
-      </div>
-    );
-  }
 
   return (
     <div className="max-w-md mx-auto p-4">
@@ -38,17 +42,17 @@ export default function Quiz() {
           <li key={idx}>
             <button
               className={`block w-full text-left p-2 mb-2 border rounded ${
-                selected === idx ? "bg-blue-200" : "bg-white"
+                selectedOption === idx ? "bg-blue-200" : "bg-white"
               }`}
-              onClick={() => handleOptionClick(idx)}
-              disabled={selected !== null}
+              onClick={() => onSelectOption(idx)}
+              disabled={selectedOption !== null}
             >
               {opt}
             </button>
           </li>
         ))}
       </ul>
-      {selected !== null && (
+      {selectedOption !== null && (
         <button
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
           onClick={nextQuestion}

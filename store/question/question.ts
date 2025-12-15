@@ -1,16 +1,11 @@
 import { Question } from "@/interfaces/question";
 import { questions } from "@/mocks/questionsMocks";
 import { create } from "zustand";
-
-type QuestionState = {
-  questions: Question[];
-  currentQuestion: number;
-  setCurrentQuestion: (index: number) => void;
-};
+import { QuestionState } from "./types";
 
 const useQuestion = create<QuestionState>((set) => ({
   questions: questions,
-  currentQuestion: 0,
+  currentQuestion: null,
   setCurrentQuestion: (id: number) => set(() => ({ currentQuestion: id })),
 }));
 
