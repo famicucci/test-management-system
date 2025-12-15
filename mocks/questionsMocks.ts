@@ -1,4 +1,6 @@
-export const questions = [
+import { Question } from "@/interfaces/question";
+
+export const questions: Question[] = [
   {
     id: 1,
     question: "What is JavaScript?",
@@ -366,6 +368,7 @@ export const questions = [
       "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.",
   },
   {
+    id: 29,
     question: "What is the Temporal Dead Zone?",
     options: [
       "A period when variables are not accessible before they are declared with let or const",
@@ -378,7 +381,7 @@ export const questions = [
       "The Temporal Dead Zone is the time between entering scope and variable declaration, during which let/const variables cannot be accessed.",
   },
   {
-    id: 29,
+    id: 30,
     question: "What is the event loop?",
     options: [
       "A loop that runs events in the browser",
@@ -391,6 +394,7 @@ export const questions = [
       "The event loop is a mechanism that handles asynchronous callbacks and coordinates execution of code, events, and messages.",
   },
   {
+    id: 31,
     question: "What is the call stack?",
     options: [
       "A stack of function calls that tracks execution",
@@ -403,7 +407,7 @@ export const questions = [
       "The call stack is a stack data structure that records function calls and manages execution context in JavaScript.",
   },
   {
-    id: 30,
+    id: 32,
     question: "What are microtasks and macrotasks?",
     options: [
       "Types of JavaScript variables",
@@ -416,7 +420,7 @@ export const questions = [
       "Microtasks (e.g., promises) and macrotasks (e.g., setTimeout) are types of asynchronous tasks managed by the event loop.",
   },
   {
-    id: 31,
+    id: 33,
     question:
       "What is the difference between setTimeout, setImmediate, and process.nextTick?",
     options: [
@@ -430,7 +434,7 @@ export const questions = [
       "setTimeout schedules a macrotask, setImmediate runs after I/O events, and process.nextTick runs before other microtasks in Node.js.",
   },
   {
-    id: 32,
+    id: 34,
     question:
       "Which function is executed first: setTimeout, setImmediate, or process.nextTick?",
     options: [
@@ -444,7 +448,7 @@ export const questions = [
       "process.nextTick is executed before setTimeout and setImmediate in Node.js.",
   },
   {
-    id: 33,
+    id: 35,
     question: "What is a JavaScript runtime environment?",
     options: [
       "A place where JavaScript code is written",

@@ -1,9 +1,12 @@
 "use client";
+import { useQuestion } from "@/store";
 import { useState } from "react";
-import { questions } from "@/app/mocks/questionsMocks";
 
 export default function Quiz() {
-  const [current, setCurrent] = useState(0);
+  const questions = useQuestion((state) => state.questions);
+  const current = useQuestion((state) => state.currentQuestion);
+  const setCurrent = useQuestion((state) => state.setCurrentQuestion);
+
   const [selected, setSelected] = useState<number | null>(null);
   const [score, setScore] = useState(0);
 
