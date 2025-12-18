@@ -1,19 +1,24 @@
 import { create } from "zustand";
 import { QuizState } from "./types";
-import { questions } from "@/mocks/questionsMocks";
+import { questionsMocks } from "@/mocks/questionsMocks";
 
 const useQuiz = create<QuizState>((set) => ({
-  questions: questions,
+  questions: questionsMocks.map((q) => ({ ...q, selectedAnswer: null })),
   currentQuestion: 0,
-  correctAnswers: 0,
   nextQuestion: () =>
     set((state) => {
       if (state.currentQuestion === null) return { currentQuestion: 0 };
 
       return { currentQuestion: state.currentQuestion + 1 };
     }),
-  incrementCorrectAnswers: () =>
-    set((state) => ({ correctAnswers: state.correctAnswers + 1 })),
+  answerQuestion: (questionId: number, answeredOptionId: number | null) =>
+    set((state) => ({
+      questions: state.questions.map((question) =>
+        question.id === questionId
+          ? { ...question, selectedAnswer: answeredOptionId }
+          : question
+      ),
+    })),
 }));
 
 export default useQuiz;

@@ -1,6 +1,6 @@
 import { Question } from "@/interfaces/question";
 
-export const questions: Question[] = [
+export const questionsMocks: Omit<Question, "selectedAnswer">[] = [
   {
     id: 1,
     question: "What is JavaScript?",
@@ -10,7 +10,7 @@ export const questions: Question[] = [
       "A database management system",
       "A web browser",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "JavaScript is a programming language primarily used for web development to add interactivity to web pages.",
   },
@@ -23,7 +23,7 @@ export const questions: Question[] = [
       "Array, Object, Function, Class",
       "Text, Number, Boolean, Array",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "JavaScript has 8 main data types: String, Number, Boolean, Object, Undefined, Null, Symbol, and BigInt.",
   },
@@ -36,7 +36,7 @@ export const questions: Question[] = [
       "Both compare only value",
       "Both compare value and type",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "== compares only value (with type coercion), while === compares both value and type (strict equality).",
   },
@@ -49,7 +49,7 @@ export const questions: Question[] = [
       "A function that is immediately invoked",
       "A function that only runs once",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "A closure is a function that retains access to its lexical scope even when executed outside its original scope.",
   },
@@ -62,7 +62,7 @@ export const questions: Question[] = [
       "Only in ES6",
       "Only with arrow functions",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "Closures are created when you return a function from another function, allowing the inner function to access variables from the outer function.",
   },
@@ -75,7 +75,7 @@ export const questions: Question[] = [
       "A database management system",
       "A web browser",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "JavaScript is a programming language primarily used for web development to add interactivity to web pages.",
   },
@@ -88,7 +88,7 @@ export const questions: Question[] = [
       "Array, Object, Function, Class",
       "Text, Number, Boolean, Array",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "JavaScript has 8 main data types: String, Number, Boolean, Object, Undefined, Null, Symbol, and BigInt.",
   },
@@ -101,7 +101,7 @@ export const questions: Question[] = [
       "Both compare only value",
       "Both compare value and type",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "== compares only value (with type coercion), while === compares both value and type (strict equality).",
   },
@@ -114,7 +114,7 @@ export const questions: Question[] = [
       "A function that is immediately invoked",
       "A function that only runs once",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "A closure is a function that retains access to its lexical scope even when executed outside its original scope.",
   },
@@ -127,7 +127,7 @@ export const questions: Question[] = [
       "Only in ES6",
       "Only with arrow functions",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "Closures are created when you return a function from another function, allowing the inner function to access variables from the outer function.",
   },
@@ -140,7 +140,7 @@ export const questions: Question[] = [
       "Scope determined by the value of 'this'",
       "Scope determined by the browser",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "Lexical scope means that scope is determined by the physical placement of code in the source file.",
   },
@@ -153,7 +153,7 @@ export const questions: Question[] = [
       "let is function-scoped, var and const are block-scoped",
       "All are block-scoped",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "var is function-scoped, while let and const are block-scoped. const also creates a constant binding.",
   },
@@ -166,7 +166,7 @@ export const questions: Question[] = [
       "Automatically executing code",
       "Blocking code execution",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.",
   },
@@ -179,7 +179,7 @@ export const questions: Question[] = [
       "A period when functions cannot be called",
       "A period when the browser is unresponsive",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "The Temporal Dead Zone is the time between entering scope and variable declaration, during which let/const variables cannot be accessed.",
   },
@@ -192,7 +192,7 @@ export const questions: Question[] = [
       "A function that loops through events",
       "A way to create infinite loops",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "The event loop is a mechanism that handles asynchronous callbacks and coordinates execution of code, events, and messages.",
   },
@@ -205,7 +205,7 @@ export const questions: Question[] = [
       "A queue of asynchronous tasks",
       "A stack of variables",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "The call stack is a stack data structure that records function calls and manages execution context in JavaScript.",
   },
@@ -218,7 +218,7 @@ export const questions: Question[] = [
       "Types of functions",
       "Types of objects",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "Microtasks (e.g., promises) and macrotasks (e.g., setTimeout) are types of asynchronous tasks managed by the event loop.",
   },
@@ -232,7 +232,7 @@ export const questions: Question[] = [
       "setTimeout runs before microtasks, setImmediate runs before setTimeout, process.nextTick runs after setImmediate",
       "All run at the same time",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "setTimeout schedules a macrotask, setImmediate runs after I/O events, and process.nextTick runs before other microtasks in Node.js.",
   },
@@ -246,7 +246,7 @@ export const questions: Question[] = [
       "process.nextTick",
       "All at the same time",
     ],
-    answer: 2,
+    correctAnswer: 2,
     explanation:
       "process.nextTick is executed before setTimeout and setImmediate in Node.js.",
   },
@@ -259,7 +259,7 @@ export const questions: Question[] = [
       "A database for JavaScript",
       "A compiler for JavaScript",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "A JavaScript runtime environment is where JavaScript code is executed, such as a browser or Node.js.",
   },
@@ -272,7 +272,7 @@ export const questions: Question[] = [
       "A database management system",
       "A web browser",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "JavaScript is a programming language primarily used for web development to add interactivity to web pages.",
   },
@@ -285,7 +285,7 @@ export const questions: Question[] = [
       "Array, Object, Function, Class",
       "Text, Number, Boolean, Array",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "JavaScript has 8 main data types: String, Number, Boolean, Object, Undefined, Null, Symbol, and BigInt.",
   },
@@ -298,7 +298,7 @@ export const questions: Question[] = [
       "Both compare only value",
       "Both compare value and type",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "== compares only value (with type coercion), while === compares both value and type (strict equality).",
   },
@@ -311,7 +311,7 @@ export const questions: Question[] = [
       "A function that is immediately invoked",
       "A function that only runs once",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "A closure is a function that retains access to its lexical scope even when executed outside its original scope.",
   },
@@ -324,7 +324,7 @@ export const questions: Question[] = [
       "Only in ES6",
       "Only with arrow functions",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "Closures are created when you return a function from another function, allowing the inner function to access variables from the outer function.",
   },
@@ -337,7 +337,7 @@ export const questions: Question[] = [
       "Scope determined by the value of 'this'",
       "Scope determined by the browser",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "Lexical scope means that scope is determined by the physical placement of code in the source file.",
   },
@@ -350,7 +350,7 @@ export const questions: Question[] = [
       "let is function-scoped, var and const are block-scoped",
       "All are block-scoped",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "var is function-scoped, while let and const are block-scoped. const also creates a constant binding.",
   },
@@ -363,7 +363,7 @@ export const questions: Question[] = [
       "Automatically executing code",
       "Blocking code execution",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.",
   },
@@ -376,7 +376,7 @@ export const questions: Question[] = [
       "A period when functions cannot be called",
       "A period when the browser is unresponsive",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "The Temporal Dead Zone is the time between entering scope and variable declaration, during which let/const variables cannot be accessed.",
   },
@@ -389,7 +389,7 @@ export const questions: Question[] = [
       "A function that loops through events",
       "A way to create infinite loops",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "The event loop is a mechanism that handles asynchronous callbacks and coordinates execution of code, events, and messages.",
   },
@@ -402,7 +402,7 @@ export const questions: Question[] = [
       "A queue of asynchronous tasks",
       "A stack of variables",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "The call stack is a stack data structure that records function calls and manages execution context in JavaScript.",
   },
@@ -415,7 +415,7 @@ export const questions: Question[] = [
       "Types of functions",
       "Types of objects",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "Microtasks (e.g., promises) and macrotasks (e.g., setTimeout) are types of asynchronous tasks managed by the event loop.",
   },
@@ -429,7 +429,7 @@ export const questions: Question[] = [
       "setTimeout runs before microtasks, setImmediate runs before setTimeout, process.nextTick runs after setImmediate",
       "All run at the same time",
     ],
-    answer: 0,
+    correctAnswer: 0,
     explanation:
       "setTimeout schedules a macrotask, setImmediate runs after I/O events, and process.nextTick runs before other microtasks in Node.js.",
   },
@@ -443,7 +443,7 @@ export const questions: Question[] = [
       "process.nextTick",
       "All at the same time",
     ],
-    answer: 2,
+    correctAnswer: 2,
     explanation:
       "process.nextTick is executed before setTimeout and setImmediate in Node.js.",
   },
@@ -456,7 +456,7 @@ export const questions: Question[] = [
       "A database for JavaScript",
       "A compiler for JavaScript",
     ],
-    answer: 1,
+    correctAnswer: 1,
     explanation:
       "A JavaScript runtime environment is where JavaScript code is executed, such as a browser or Node.js.",
   },
