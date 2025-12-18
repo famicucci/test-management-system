@@ -6,4 +6,16 @@ const currentQuestionSelector = (state: QuizState) => {
   return state.questions[state.currentQuestion];
 };
 
-export { currentQuestionSelector };
+const scoreSelector = (state: QuizState) => {
+  let score = 0;
+
+  state.questions.forEach((question) => {
+    if (question.correctAnswer === question.selectedAnswer) {
+      score += 1;
+    }
+  });
+
+  return score;
+};
+
+export { currentQuestionSelector, scoreSelector };

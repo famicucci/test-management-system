@@ -3,10 +3,11 @@ import { Question } from "../Question";
 import NextButton from "../NextButton/NextButton";
 import QuestionNumber from "../QuestionNumber/QuestionNumber";
 import useQuiz from "@/store/quiz/quiz";
+import { CompletedQuiz } from "../CompletedQuiz";
 
 export default function Quiz() {
   const currentQuestion = useQuiz((state) => state.currentQuestion);
-  const numberOfQuestions = useQuiz((state) => state.numberOfQuestions);
+  const numberOfQuestions = useQuiz((state) => state.questions.length);
 
   return (
     <div className="max-w-md mx-auto p-4">
@@ -19,9 +20,7 @@ export default function Quiz() {
           </div>
         </>
       ) : (
-        <div className="text-center">
-          <h2 className="text-2xl font-bold mb-4">Quiz Completed!</h2>
-        </div>
+        <CompletedQuiz />
       )}
     </div>
   );
