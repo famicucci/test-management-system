@@ -1,10 +1,11 @@
 "use client";
 import { useQuestion } from "@/store/question";
+import { currentQuestionSelector } from "@/store/question/selectors";
 import { useEffect, useState } from "react";
 
 export default function Quiz() {
   const questions = useQuestion((state) => state.questions);
-  const current = useQuestion((state) => state.currentQuestion);
+  const current = currentQuestionSelector(useQuestion.getState());
   const setCurrent = useQuestion((state) => state.setCurrentQuestion);
 
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
@@ -24,7 +25,7 @@ export default function Quiz() {
 
   const onSelectOption = (idx: number) => {
     setSelectedOption(idx);
-    if (idx === questions[current].answer) {
+    if (idx === current.answer) {
       setScore(score + 1);
     }
   };
@@ -36,9 +37,9 @@ export default function Quiz() {
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <h2 className="text-lg font-bold mb-2">{questions[current].question}</h2>
+      <h2 className="text-lg font-bold mb-2">{current.question}</h2>
       <ul>
-        {questions[current].options.map((opt, idx) => (
+        {current.options.map((opt, idx) => (
           <li key={idx}>
             <button
               className={`block w-full text-left p-2 mb-2 border rounded ${
