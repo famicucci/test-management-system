@@ -3,7 +3,9 @@ import { QuizState } from "./types";
 import { questionsMocks } from "@/mocks/questionsMocks";
 
 const useQuiz = create<QuizState>((set) => ({
-  questions: questionsMocks.map((q) => ({ ...q, selectedAnswer: null })),
+  questions: questionsMocks
+    .slice(0, 10)
+    .map((q) => ({ ...q, selectedAnswer: null })),
   currentQuestion: 0,
   nextQuestion: () =>
     set((state) => {
