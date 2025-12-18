@@ -6,6 +6,7 @@ const useQuiz = create<QuizState>((set) => ({
   questions: questionsMocks
     .slice(0, 10)
     .map((q) => ({ ...q, selectedAnswer: null })),
+  numberOfQuestions: 10,
   currentQuestion: 0,
   nextQuestion: () =>
     set((state) => {
