@@ -11,6 +11,12 @@
 # Vercel deployment
 .vercel
 
+# frontend
+/quiz.frontend/node_modules
+/quiz.frontend/dist
+/quiz.frontend/build
+/quiz.frontend/.next
+
 # backend
 /quiz.backend/node_modules
 /quiz.backend/dist
