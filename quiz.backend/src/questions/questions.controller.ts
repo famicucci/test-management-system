@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { Question } from './interfaces/question';
 import { QuestionsService } from './questions.service';
 
@@ -7,7 +7,7 @@ export class QuestionsController {
   constructor(private readonly questionsService: QuestionsService) {}
 
   @Get()
-  getQuestions(): Question[] {
-    return this.questionsService.getQuestions();
+  getQuestions(@Query('qty') qty: number): Question[] {
+    return this.questionsService.getQuestions(qty);
   }
 }

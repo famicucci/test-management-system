@@ -4,7 +4,7 @@ import { Question } from './interfaces/question';
 
 @Injectable()
 export class QuestionsService {
-  getQuestions(): Question[] {
-    return questionsMocks;
+  getQuestions(qty: number): Question[] {
+    return questionsMocks.slice(0, qty);
   }
 }
