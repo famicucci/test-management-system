@@ -11,9 +11,6 @@ export class CreateQuestionDto {
   @Type(() => OptionDto)
   options: OptionDto[];
 
-  @IsNumber()
-  correctAnswer: number;
-
   @IsString()
   explanation: string;
 }
