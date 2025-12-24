@@ -10,7 +10,10 @@ const scoreSelector = (state: QuizState) => {
   let score = 0;
 
   state.questions.forEach((question) => {
-    if (question.correctAnswer === question.selectedAnswer) {
+    if (
+      question.options.find((option) => option.isCorrect)?.id ===
+      question.selectedAnswer
+    ) {
       score += 1;
     }
   });

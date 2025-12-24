@@ -1,8 +1,9 @@
+import { Option } from "./option";
+
 export interface Question {
   id: number;
   question: string;
-  options: string[];
-  correctAnswer: number;
+  options: Option[];
   explanation: string;
   selectedAnswer: number | null;
 }

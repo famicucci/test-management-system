@@ -10,8 +10,6 @@ export default function Quiz() {
   const currentQuestion = useQuiz((state) => state.currentQuestion);
   const numberOfQuestions = useQuiz((state) => state.questions.length);
   const fetchQuestions = useQuiz((state) => state.fetchQuestions);
-  const status = useQuiz((state) => state.status);
-  console.log("Quiz status:", status);
 
   useEffect(() => {
     fetchQuestions();

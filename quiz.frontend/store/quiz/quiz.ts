@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { QuizState } from "./types";
+import { Question } from "@/interfaces/question";
 
 const useQuiz = create<QuizState>((set) => ({
   questions: [],
@@ -23,7 +24,7 @@ const useQuiz = create<QuizState>((set) => ({
     set({ status: "loading" });
     try {
       const res = await fetch("http://localhost:4000/questions?qty=10");
-      const data = await res.json();
+      const data: Question[] = await res.json();
       set({
         questions: data.map((q: any) => ({ ...q, selectedAnswer: null })),
         status: "succeeded",
