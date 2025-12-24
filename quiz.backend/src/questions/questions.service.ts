@@ -13,7 +13,7 @@ export class QuestionsService {
   ) {}
 
   getQuestions(qty: number): Promise<QuestionEntity[]> {
-    return this.questionsRepository.find({ take: qty });
+    return this.questionsRepository.find({ take: qty, relations: ['options'] });
   }
 
   createQuestion(question: CreateQuestionDto): Promise<QuestionEntity> {
