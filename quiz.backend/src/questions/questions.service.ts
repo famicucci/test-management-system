@@ -13,8 +13,8 @@ export class QuestionsService {
     private questionsRepository: Repository<QuestionEntity>,
   ) {}
 
-  getQuestions(qty: number): QuestionInterface[] {
-    return questionsMocks.slice(0, qty);
+  getQuestions(qty: number): any {
+    return 'questionsMocks.slice(0, qty);';
   }
 
   createQuestion(question: CreateQuestionDto): Promise<QuestionEntity> {

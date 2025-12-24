@@ -1,463 +1,305 @@
+import { CreateQuestionDto } from '../dtos/create-question.dto';
 import { Question } from '../interfaces/question';
 
-export const questionsMocks: Question[] = [
+export const questionsMocks: CreateQuestionDto[] = [
   {
-    id: 1,
     question: 'What is JavaScript?',
-    options: [
-      'A markup language for web pages',
-      'A programming language for web development',
-      'A database management system',
-      'A web browser',
-    ],
-    correctAnswer: 1,
     explanation:
       'JavaScript is a programming language primarily used for web development to add interactivity to web pages.',
+    options: [
+      { text: 'A markup language for web pages', isCorrect: false },
+      { text: 'A programming language for web development', isCorrect: true },
+      { text: 'A database management system', isCorrect: false },
+      { text: 'A web browser', isCorrect: false },
+    ],
   },
   {
-    id: 2,
     question: 'What are the different data types in JavaScript?',
-    options: [
-      'String, Number, Boolean, Object, Undefined, Null, Symbol, BigInt',
-      'Integer, Float, Char, String, Boolean',
-      'Array, Object, Function, Class',
-      'Text, Number, Boolean, Array',
-    ],
-    correctAnswer: 0,
     explanation:
       'JavaScript has 8 main data types: String, Number, Boolean, Object, Undefined, Null, Symbol, and BigInt.',
+    options: [
+      {
+        text: 'String, Number, Boolean, Object, Undefined, Null, Symbol, BigInt',
+        isCorrect: true,
+      },
+      { text: 'Integer, Float, Char, String, Boolean', isCorrect: false },
+      { text: 'Array, Object, Function, Class', isCorrect: false },
+      { text: 'Text, Number, Boolean, Array', isCorrect: false },
+    ],
   },
   {
-    id: 3,
     question: 'What is the difference between == and ===?',
-    options: [
-      '== compares value and type, === compares only value',
-      '== compares only value, === compares value and type',
-      'Both compare only value',
-      'Both compare value and type',
-    ],
-    correctAnswer: 1,
     explanation:
       '== compares only value (with type coercion), while === compares both value and type (strict equality).',
+    options: [
+      {
+        text: '== compares value and type, === compares only value',
+        isCorrect: false,
+      },
+      {
+        text: '== compares only value, === compares value and type',
+        isCorrect: true,
+      },
+      { text: 'Both compare only value', isCorrect: false },
+      { text: 'Both compare value and type', isCorrect: false },
+    ],
   },
   {
-    id: 4,
     question: 'What is a closure?',
-    options: [
-      'A function that returns another function',
-      "A function that has access to its own scope, the outer function's scope, and the global scope",
-      'A function that is immediately invoked',
-      'A function that only runs once',
-    ],
-    correctAnswer: 1,
     explanation:
       'A closure is a function that retains access to its lexical scope even when executed outside its original scope.',
+    options: [
+      { text: 'A function that returns another function', isCorrect: false },
+      {
+        text: "A function that has access to its own scope, the outer function's scope, and the global scope",
+        isCorrect: true,
+      },
+      { text: 'A function that is immediately invoked', isCorrect: false },
+      { text: 'A function that only runs once', isCorrect: false },
+    ],
   },
   {
-    id: 5,
     question: 'Can you create a closure?',
-    options: [
-      'No, closures are created automatically',
-      'Yes, by returning a function from another function',
-      'Only in ES6',
-      'Only with arrow functions',
-    ],
-    correctAnswer: 1,
     explanation:
       'Closures are created when you return a function from another function, allowing the inner function to access variables from the outer function.',
+    options: [
+      { text: 'No, closures are created automatically', isCorrect: false },
+      {
+        text: 'Yes, by returning a function from another function',
+        isCorrect: true,
+      },
+      { text: 'Only in ES6', isCorrect: false },
+      { text: 'Only with arrow functions', isCorrect: false },
+    ],
   },
   {
-    id: 6,
     question: 'What is JavaScript?',
-    options: [
-      'A markup language for web pages',
-      'A programming language for web development',
-      'A database management system',
-      'A web browser',
-    ],
-    correctAnswer: 1,
     explanation:
       'JavaScript is a programming language primarily used for web development to add interactivity to web pages.',
+    options: [
+      { text: 'A markup language for web pages', isCorrect: false },
+      { text: 'A programming language for web development', isCorrect: true },
+      { text: 'A database management system', isCorrect: false },
+      { text: 'A web browser', isCorrect: false },
+    ],
   },
   {
-    id: 7,
     question: 'What are the different data types in JavaScript?',
-    options: [
-      'String, Number, Boolean, Object, Undefined, Null, Symbol, BigInt',
-      'Integer, Float, Char, String, Boolean',
-      'Array, Object, Function, Class',
-      'Text, Number, Boolean, Array',
-    ],
-    correctAnswer: 0,
     explanation:
       'JavaScript has 8 main data types: String, Number, Boolean, Object, Undefined, Null, Symbol, and BigInt.',
+    options: [
+      {
+        text: 'String, Number, Boolean, Object, Undefined, Null, Symbol, BigInt',
+        isCorrect: true,
+      },
+      { text: 'Integer, Float, Char, String, Boolean', isCorrect: false },
+      { text: 'Array, Object, Function, Class', isCorrect: false },
+      { text: 'Text, Number, Boolean, Array', isCorrect: false },
+    ],
   },
   {
-    id: 8,
     question: 'What is the difference between == and ===?',
-    options: [
-      '== compares value and type, === compares only value',
-      '== compares only value, === compares value and type',
-      'Both compare only value',
-      'Both compare value and type',
-    ],
-    correctAnswer: 1,
     explanation:
       '== compares only value (with type coercion), while === compares both value and type (strict equality).',
+    options: [
+      {
+        text: '== compares value and type, === compares only value',
+        isCorrect: false,
+      },
+      {
+        text: '== compares only value, === compares value and type',
+        isCorrect: true,
+      },
+      { text: 'Both compare only value', isCorrect: false },
+      { text: 'Both compare value and type', isCorrect: false },
+    ],
   },
   {
-    id: 9,
     question: 'What is a closure?',
-    options: [
-      'A function that returns another function',
-      "A function that has access to its own scope, the outer function's scope, and the global scope",
-      'A function that is immediately invoked',
-      'A function that only runs once',
-    ],
-    correctAnswer: 1,
     explanation:
       'A closure is a function that retains access to its lexical scope even when executed outside its original scope.',
+    options: [
+      { text: 'A function that returns another function', isCorrect: false },
+      {
+        text: "A function that has access to its own scope, the outer function's scope, and the global scope",
+        isCorrect: true,
+      },
+      { text: 'A function that is immediately invoked', isCorrect: false },
+      { text: 'A function that only runs once', isCorrect: false },
+    ],
   },
   {
-    id: 10,
     question: 'Can you create a closure?',
-    options: [
-      'No, closures are created automatically',
-      'Yes, by returning a function from another function',
-      'Only in ES6',
-      'Only with arrow functions',
-    ],
-    correctAnswer: 1,
     explanation:
       'Closures are created when you return a function from another function, allowing the inner function to access variables from the outer function.',
+    options: [
+      { text: 'No, closures are created automatically', isCorrect: false },
+      {
+        text: 'Yes, by returning a function from another function',
+        isCorrect: true,
+      },
+      { text: 'Only in ES6', isCorrect: false },
+      { text: 'Only with arrow functions', isCorrect: false },
+    ],
   },
   {
-    id: 11,
     question: 'What is lexical scope?',
-    options: [
-      'Scope determined by the order in which functions are called',
-      'Scope determined by the physical placement of code in the source file',
-      "Scope determined by the value of 'this'",
-      'Scope determined by the browser',
-    ],
-    correctAnswer: 1,
     explanation:
       'Lexical scope means that scope is determined by the physical placement of code in the source file.',
+    options: [
+      {
+        text: 'Scope determined by the order in which functions are called',
+        isCorrect: false,
+      },
+      {
+        text: 'Scope determined by the physical placement of code in the source file',
+        isCorrect: true,
+      },
+      { text: "Scope determined by the value of 'this'", isCorrect: false },
+      { text: 'Scope determined by the browser', isCorrect: false },
+    ],
   },
   {
-    id: 12,
     question: 'What is the difference between var, let, and const?',
-    options: [
-      'var is block-scoped, let and const are function-scoped',
-      'var is function-scoped, let and const are block-scoped',
-      'let is function-scoped, var and const are block-scoped',
-      'All are block-scoped',
-    ],
-    correctAnswer: 1,
     explanation:
       'var is function-scoped, while let and const are block-scoped. const also creates a constant binding.',
+    options: [
+      {
+        text: 'var is block-scoped, let and const are function-scoped',
+        isCorrect: false,
+      },
+      {
+        text: 'var is function-scoped, let and const are block-scoped',
+        isCorrect: true,
+      },
+      {
+        text: 'let is function-scoped, var and const are block-scoped',
+        isCorrect: false,
+      },
+      { text: 'All are block-scoped', isCorrect: false },
+    ],
   },
   {
-    id: 13,
     question: 'What is hoisting?',
-    options: [
-      'Moving all variables to the top of their scope',
-      'Moving all functions to the bottom of their scope',
-      'Automatically executing code',
-      'Blocking code execution',
-    ],
-    correctAnswer: 0,
     explanation:
       "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.",
+    options: [
+      {
+        text: 'Moving all variables to the top of their scope',
+        isCorrect: true,
+      },
+      {
+        text: 'Moving all functions to the bottom of their scope',
+        isCorrect: false,
+      },
+      { text: 'Automatically executing code', isCorrect: false },
+      { text: 'Blocking code execution', isCorrect: false },
+    ],
   },
   {
-    id: 14,
     question: 'What is the Temporal Dead Zone?',
-    options: [
-      'A period when variables are not accessible before they are declared with let or const',
-      'A period when variables are accessible before declaration',
-      'A period when functions cannot be called',
-      'A period when the browser is unresponsive',
-    ],
-    correctAnswer: 0,
     explanation:
       'The Temporal Dead Zone is the time between entering scope and variable declaration, during which let/const variables cannot be accessed.',
+    options: [
+      {
+        text: 'A period when variables are not accessible before they are declared with let or const',
+        isCorrect: true,
+      },
+      {
+        text: 'A period when variables are accessible before declaration',
+        isCorrect: false,
+      },
+      { text: 'A period when functions cannot be called', isCorrect: false },
+      { text: 'A period when the browser is unresponsive', isCorrect: false },
+    ],
   },
   {
-    id: 15,
     question: 'What is the event loop?',
-    options: [
-      'A loop that runs events in the browser',
-      'A mechanism that handles asynchronous callbacks in JavaScript',
-      'A function that loops through events',
-      'A way to create infinite loops',
-    ],
-    correctAnswer: 1,
     explanation:
       'The event loop is a mechanism that handles asynchronous callbacks and coordinates execution of code, events, and messages.',
+    options: [
+      { text: 'A loop that runs events in the browser', isCorrect: false },
+      {
+        text: 'A mechanism that handles asynchronous callbacks in JavaScript',
+        isCorrect: true,
+      },
+      { text: 'A function that loops through events', isCorrect: false },
+      { text: 'A way to create infinite loops', isCorrect: false },
+    ],
   },
   {
-    id: 16,
     question: 'What is the call stack?',
-    options: [
-      'A stack of function calls that tracks execution',
-      'A list of events to be processed',
-      'A queue of asynchronous tasks',
-      'A stack of variables',
-    ],
-    correctAnswer: 0,
     explanation:
       'The call stack is a stack data structure that records function calls and manages execution context in JavaScript.',
+    options: [
+      {
+        text: 'A stack of function calls that tracks execution',
+        isCorrect: true,
+      },
+      { text: 'A list of events to be processed', isCorrect: false },
+      { text: 'A queue of asynchronous tasks', isCorrect: false },
+      { text: 'A stack of variables', isCorrect: false },
+    ],
   },
   {
-    id: 17,
     question: 'What are microtasks and macrotasks?',
-    options: [
-      'Types of JavaScript variables',
-      'Types of asynchronous tasks scheduled by the event loop',
-      'Types of functions',
-      'Types of objects',
-    ],
-    correctAnswer: 1,
     explanation:
       'Microtasks (e.g., promises) and macrotasks (e.g., setTimeout) are types of asynchronous tasks managed by the event loop.',
+    options: [
+      { text: 'Types of JavaScript variables', isCorrect: false },
+      {
+        text: 'Types of asynchronous tasks scheduled by the event loop',
+        isCorrect: true,
+      },
+      { text: 'Types of functions', isCorrect: false },
+      { text: 'Types of objects', isCorrect: false },
+    ],
   },
   {
-    id: 18,
     question:
       'What is the difference between setTimeout, setImmediate, and process.nextTick?',
-    options: [
-      'setTimeout runs after all microtasks, setImmediate runs after I/O events, process.nextTick runs before other microtasks',
-      'setTimeout runs immediately, setImmediate runs after microtasks, process.nextTick runs after setTimeout',
-      'setTimeout runs before microtasks, setImmediate runs before setTimeout, process.nextTick runs after setImmediate',
-      'All run at the same time',
-    ],
-    correctAnswer: 0,
     explanation:
       'setTimeout schedules a macrotask, setImmediate runs after I/O events, and process.nextTick runs before other microtasks in Node.js.',
+    options: [
+      {
+        text: 'setTimeout runs after all microtasks, setImmediate runs after I/O events, process.nextTick runs before other microtasks',
+        isCorrect: true,
+      },
+      {
+        text: 'setTimeout runs immediately, setImmediate runs after microtasks, process.nextTick runs after setTimeout',
+        isCorrect: false,
+      },
+      {
+        text: 'setTimeout runs before microtasks, setImmediate runs before setTimeout, process.nextTick runs after setImmediate',
+        isCorrect: false,
+      },
+      { text: 'All run at the same time', isCorrect: false },
+    ],
   },
   {
-    id: 19,
     question:
       'Which function is executed first: setTimeout, setImmediate, or process.nextTick?',
-    options: [
-      'setTimeout',
-      'setImmediate',
-      'process.nextTick',
-      'All at the same time',
-    ],
-    correctAnswer: 2,
     explanation:
       'process.nextTick is executed before setTimeout and setImmediate in Node.js.',
+    options: [
+      { text: 'setTimeout', isCorrect: false },
+      { text: 'setImmediate', isCorrect: false },
+      { text: 'process.nextTick', isCorrect: true },
+      { text: 'All at the same time', isCorrect: false },
+    ],
   },
   {
-    id: 20,
     question: 'What is a JavaScript runtime environment?',
-    options: [
-      'A place where JavaScript code is written',
-      'A browser or Node.js where JavaScript code is executed',
-      'A database for JavaScript',
-      'A compiler for JavaScript',
-    ],
-    correctAnswer: 1,
     explanation:
       'A JavaScript runtime environment is where JavaScript code is executed, such as a browser or Node.js.',
-  },
-  {
-    id: 21,
-    question: 'What is JavaScript?',
     options: [
-      'A markup language for web pages',
-      'A programming language for web development',
-      'A database management system',
-      'A web browser',
+      { text: 'A place where JavaScript code is written', isCorrect: false },
+      {
+        text: 'A browser or Node.js where JavaScript code is executed',
+        isCorrect: true,
+      },
+      { text: 'A database for JavaScript', isCorrect: false },
+      { text: 'A compiler for JavaScript', isCorrect: false },
     ],
-    correctAnswer: 1,
-    explanation:
-      'JavaScript is a programming language primarily used for web development to add interactivity to web pages.',
-  },
-  {
-    id: 22,
-    question: 'What are the different data types in JavaScript?',
-    options: [
-      'String, Number, Boolean, Object, Undefined, Null, Symbol, BigInt',
-      'Integer, Float, Char, String, Boolean',
-      'Array, Object, Function, Class',
-      'Text, Number, Boolean, Array',
-    ],
-    correctAnswer: 0,
-    explanation:
-      'JavaScript has 8 main data types: String, Number, Boolean, Object, Undefined, Null, Symbol, and BigInt.',
-  },
-  {
-    id: 23,
-    question: 'What is the difference between == and ===?',
-    options: [
-      '== compares value and type, === compares only value',
-      '== compares only value, === compares value and type',
-      'Both compare only value',
-      'Both compare value and type',
-    ],
-    correctAnswer: 1,
-    explanation:
-      '== compares only value (with type coercion), while === compares both value and type (strict equality).',
-  },
-  {
-    id: 24,
-    question: 'What is a closure?',
-    options: [
-      'A function that returns another function',
-      "A function that has access to its own scope, the outer function's scope, and the global scope",
-      'A function that is immediately invoked',
-      'A function that only runs once',
-    ],
-    correctAnswer: 1,
-    explanation:
-      'A closure is a function that retains access to its lexical scope even when executed outside its original scope.',
-  },
-  {
-    id: 25,
-    question: 'Can you create a closure?',
-    options: [
-      'No, closures are created automatically',
-      'Yes, by returning a function from another function',
-      'Only in ES6',
-      'Only with arrow functions',
-    ],
-    correctAnswer: 1,
-    explanation:
-      'Closures are created when you return a function from another function, allowing the inner function to access variables from the outer function.',
-  },
-  {
-    id: 26,
-    question: 'What is lexical scope?',
-    options: [
-      'Scope determined by the order in which functions are called',
-      'Scope determined by the physical placement of code in the source file',
-      "Scope determined by the value of 'this'",
-      'Scope determined by the browser',
-    ],
-    correctAnswer: 1,
-    explanation:
-      'Lexical scope means that scope is determined by the physical placement of code in the source file.',
-  },
-  {
-    id: 27,
-    question: 'What is the difference between var, let, and const?',
-    options: [
-      'var is block-scoped, let and const are function-scoped',
-      'var is function-scoped, let and const are block-scoped',
-      'let is function-scoped, var and const are block-scoped',
-      'All are block-scoped',
-    ],
-    correctAnswer: 1,
-    explanation:
-      'var is function-scoped, while let and const are block-scoped. const also creates a constant binding.',
-  },
-  {
-    id: 28,
-    question: 'What is hoisting?',
-    options: [
-      'Moving all variables to the top of their scope',
-      'Moving all functions to the bottom of their scope',
-      'Automatically executing code',
-      'Blocking code execution',
-    ],
-    correctAnswer: 0,
-    explanation:
-      "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.",
-  },
-  {
-    id: 29,
-    question: 'What is the Temporal Dead Zone?',
-    options: [
-      'A period when variables are not accessible before they are declared with let or const',
-      'A period when variables are accessible before declaration',
-      'A period when functions cannot be called',
-      'A period when the browser is unresponsive',
-    ],
-    correctAnswer: 0,
-    explanation:
-      'The Temporal Dead Zone is the time between entering scope and variable declaration, during which let/const variables cannot be accessed.',
-  },
-  {
-    id: 30,
-    question: 'What is the event loop?',
-    options: [
-      'A loop that runs events in the browser',
-      'A mechanism that handles asynchronous callbacks in JavaScript',
-      'A function that loops through events',
-      'A way to create infinite loops',
-    ],
-    correctAnswer: 1,
-    explanation:
-      'The event loop is a mechanism that handles asynchronous callbacks and coordinates execution of code, events, and messages.',
-  },
-  {
-    id: 31,
-    question: 'What is the call stack?',
-    options: [
-      'A stack of function calls that tracks execution',
-      'A list of events to be processed',
-      'A queue of asynchronous tasks',
-      'A stack of variables',
-    ],
-    correctAnswer: 0,
-    explanation:
-      'The call stack is a stack data structure that records function calls and manages execution context in JavaScript.',
-  },
-  {
-    id: 32,
-    question: 'What are microtasks and macrotasks?',
-    options: [
-      'Types of JavaScript variables',
-      'Types of asynchronous tasks scheduled by the event loop',
-      'Types of functions',
-      'Types of objects',
-    ],
-    correctAnswer: 1,
-    explanation:
-      'Microtasks (e.g., promises) and macrotasks (e.g., setTimeout) are types of asynchronous tasks managed by the event loop.',
-  },
-  {
-    id: 33,
-    question:
-      'What is the difference between setTimeout, setImmediate, and process.nextTick?',
-    options: [
-      'setTimeout runs after all microtasks, setImmediate runs after I/O events, process.nextTick runs before other microtasks',
-      'setTimeout runs immediately, setImmediate runs after microtasks, process.nextTick runs after setTimeout',
-      'setTimeout runs before microtasks, setImmediate runs before setTimeout, process.nextTick runs after setImmediate',
-      'All run at the same time',
-    ],
-    correctAnswer: 0,
-    explanation:
-      'setTimeout schedules a macrotask, setImmediate runs after I/O events, and process.nextTick runs before other microtasks in Node.js.',
-  },
-  {
-    id: 34,
-    question:
-      'Which function is executed first: setTimeout, setImmediate, or process.nextTick?',
-    options: [
-      'setTimeout',
-      'setImmediate',
-      'process.nextTick',
-      'All at the same time',
-    ],
-    correctAnswer: 2,
-    explanation:
-      'process.nextTick is executed before setTimeout and setImmediate in Node.js.',
-  },
-  {
-    id: 35,
-    question: 'What is a JavaScript runtime environment?',
-    options: [
-      'A place where JavaScript code is written',
-      'A browser or Node.js where JavaScript code is executed',
-      'A database for JavaScript',
-      'A compiler for JavaScript',
-    ],
-    correctAnswer: 1,
-    explanation:
-      'A JavaScript runtime environment is where JavaScript code is executed, such as a browser or Node.js.',
   },
 ];
