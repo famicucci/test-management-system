@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { questionsMocks } from './mocks/questions.mock';
-import { Question as QuestionInterface } from './interfaces/question';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Question as QuestionEntity } from './questions.entity';
 import { Repository } from 'typeorm';
@@ -13,8 +12,8 @@ export class QuestionsService {
     private questionsRepository: Repository<QuestionEntity>,
   ) {}
 
-  getQuestions(qty: number): any {
-    return 'questionsMocks.slice(0, qty);';
+  getQuestions(qty: number): Promise<QuestionEntity[]> {
+    return this.questionsRepository.find({ take: qty });
   }
 
   createQuestion(question: CreateQuestionDto): Promise<QuestionEntity> {

@@ -1,5 +1,4 @@
 import { CreateQuestionDto } from '../dtos/create-question.dto';
-import { Question } from '../interfaces/question';
 
 export const questionsMocks: CreateQuestionDto[] = [
   {
