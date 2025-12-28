@@ -1,4 +1,5 @@
 import { Question } from "@/interfaces/question";
+import Accordion from "../../Accordion/Accordion";
 
 const Answer = ({ question }: { question: Question }) => {
   const selectedOption = question.options.find(
@@ -16,6 +17,9 @@ const Answer = ({ question }: { question: Question }) => {
         <span className="font-bold">Correct Answer:</span>{" "}
         {isCorrect ? "Yes" : "No"}
       </p>
+      <Accordion title="Explanation">
+        <p>{question.explanation}</p>
+      </Accordion>
     </div>
   );
 };
