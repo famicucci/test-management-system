@@ -3,12 +3,12 @@ import { Option } from './questions/options.entity';
 import { Question } from './questions/questions.entity';
 
 const config: TypeOrmModuleOptions = {
-  type: 'mysql',
-  host: 'localhost',
-  port: 3307,
-  username: 'root',
-  password: 'yourpassword',
-  database: 'quizdb',
+  type: process.env.DB_TYPE as 'mysql',
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
   entities: [Question, Option],
   synchronize: true, // Auto-creates tables in dev, turn off in production!
 };
