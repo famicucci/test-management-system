@@ -27,23 +27,6 @@ export const questionsMocks: CreateQuestionDto[] = [
     ],
   },
   {
-    question: 'What is the difference between == and ===?',
-    explanation:
-      '== compares only value (with type coercion), while === compares both value and type (strict equality).',
-    options: [
-      {
-        text: '== compares value and type, === compares only value',
-        isCorrect: false,
-      },
-      {
-        text: '== compares only value, === compares value and type',
-        isCorrect: true,
-      },
-      { text: 'Both compare only value', isCorrect: false },
-      { text: 'Both compare value and type', isCorrect: false },
-    ],
-  },
-  {
     question: 'What is a closure?',
     explanation:
       'A closure is a function that retains access to its lexical scope even when executed outside its original scope.',
@@ -55,45 +38,6 @@ export const questionsMocks: CreateQuestionDto[] = [
       },
       { text: 'A function that is immediately invoked', isCorrect: false },
       { text: 'A function that only runs once', isCorrect: false },
-    ],
-  },
-  {
-    question: 'Can you create a closure?',
-    explanation:
-      'Closures are created when you return a function from another function, allowing the inner function to access variables from the outer function.',
-    options: [
-      { text: 'No, closures are created automatically', isCorrect: false },
-      {
-        text: 'Yes, by returning a function from another function',
-        isCorrect: true,
-      },
-      { text: 'Only in ES6', isCorrect: false },
-      { text: 'Only with arrow functions', isCorrect: false },
-    ],
-  },
-  {
-    question: 'What is JavaScript?',
-    explanation:
-      'JavaScript is a programming language primarily used for web development to add interactivity to web pages.',
-    options: [
-      { text: 'A markup language for web pages', isCorrect: false },
-      { text: 'A programming language for web development', isCorrect: true },
-      { text: 'A database management system', isCorrect: false },
-      { text: 'A web browser', isCorrect: false },
-    ],
-  },
-  {
-    question: 'What are the different data types in JavaScript?',
-    explanation:
-      'JavaScript has 8 main data types: String, Number, Boolean, Object, Undefined, Null, Symbol, and BigInt.',
-    options: [
-      {
-        text: 'String, Number, Boolean, Object, Undefined, Null, Symbol, BigInt',
-        isCorrect: true,
-      },
-      { text: 'Integer, Float, Char, String, Boolean', isCorrect: false },
-      { text: 'Array, Object, Function, Class', isCorrect: false },
-      { text: 'Text, Number, Boolean, Array', isCorrect: false },
     ],
   },
   {
@@ -111,20 +55,6 @@ export const questionsMocks: CreateQuestionDto[] = [
       },
       { text: 'Both compare only value', isCorrect: false },
       { text: 'Both compare value and type', isCorrect: false },
-    ],
-  },
-  {
-    question: 'What is a closure?',
-    explanation:
-      'A closure is a function that retains access to its lexical scope even when executed outside its original scope.',
-    options: [
-      { text: 'A function that returns another function', isCorrect: false },
-      {
-        text: "A function that has access to its own scope, the outer function's scope, and the global scope",
-        isCorrect: true,
-      },
-      { text: 'A function that is immediately invoked', isCorrect: false },
-      { text: 'A function that only runs once', isCorrect: false },
     ],
   },
   {
