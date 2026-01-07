@@ -13,4 +13,7 @@ export class CreateQuestionDto {
 
   @IsString()
   explanation: string;
+
+  @IsString()
+  topic: string;
 }

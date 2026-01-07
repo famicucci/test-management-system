@@ -11,6 +11,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'A database management system', isCorrect: false },
       { text: 'A web browser', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What are the different data types in JavaScript?',
@@ -25,6 +26,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'Array, Object, Function, Class', isCorrect: false },
       { text: 'Text, Number, Boolean, Array', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is a closure?',
@@ -39,6 +41,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'A function that is immediately invoked', isCorrect: false },
       { text: 'A function that only runs once', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is the difference between == and ===?',
@@ -56,6 +59,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'Both compare only value', isCorrect: false },
       { text: 'Both compare value and type', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'Can you create a closure?',
@@ -70,6 +74,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'Only in ES6', isCorrect: false },
       { text: 'Only with arrow functions', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is lexical scope?',
@@ -87,6 +92,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: "Scope determined by the value of 'this'", isCorrect: false },
       { text: 'Scope determined by the browser', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is the difference between var, let, and const?',
@@ -107,6 +113,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       },
       { text: 'All are block-scoped', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is hoisting?',
@@ -124,6 +131,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'Automatically executing code', isCorrect: false },
       { text: 'Blocking code execution', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is the Temporal Dead Zone?',
@@ -141,6 +149,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'A period when functions cannot be called', isCorrect: false },
       { text: 'A period when the browser is unresponsive', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is the event loop?',
@@ -155,6 +164,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'A function that loops through events', isCorrect: false },
       { text: 'A way to create infinite loops', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is the call stack?',
@@ -169,6 +179,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'A queue of asynchronous tasks', isCorrect: false },
       { text: 'A stack of variables', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What are microtasks and macrotasks?',
@@ -183,6 +194,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'Types of functions', isCorrect: false },
       { text: 'Types of objects', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question:
@@ -204,6 +216,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       },
       { text: 'All run at the same time', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question:
@@ -216,6 +229,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'process.nextTick', isCorrect: true },
       { text: 'All at the same time', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is a JavaScript runtime environment?',
@@ -230,6 +244,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'A database for JavaScript', isCorrect: false },
       { text: 'A compiler for JavaScript', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is de Virtual DOM?',
@@ -241,6 +256,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'A database for JavaScript', isCorrect: false },
       { text: 'A compiler for JavaScript', isCorrect: false },
     ],
+    topic: 'React',
   },
   {
     question: 'What is the DOM?',
@@ -252,6 +268,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'A database for JavaScript', isCorrect: false },
       { text: 'A compiler for JavaScript', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is the difference between HTML and the DOM?',
@@ -272,6 +289,7 @@ export const questionsMocks: CreateQuestionDto[] = [
         isCorrect: false,
       },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'What is the event loop in JavaScript?',
@@ -286,6 +304,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'A way to create infinite loops', isCorrect: false },
       { text: 'A stack of function calls', isCorrect: false },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'Explain event loop in JavaScript in detail',
@@ -309,6 +328,7 @@ export const questionsMocks: CreateQuestionDto[] = [
         isCorrect: false,
       },
     ],
+    topic: 'JavaScript',
   },
   {
     question: 'Which are the five SOLID principles of object-oriented design?',
@@ -329,6 +349,7 @@ export const questionsMocks: CreateQuestionDto[] = [
         isCorrect: false,
       },
     ],
+    topic: 'Software Design',
   },
   {
     question: 'What does the Dependency Inversion Principle state?',
@@ -352,6 +373,7 @@ export const questionsMocks: CreateQuestionDto[] = [
         isCorrect: false,
       },
     ],
+    topic: 'Software Design',
   },
   {
     question:
@@ -367,6 +389,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'Running all queries without filters', isCorrect: false },
       { text: 'Storing all data in a single table', isCorrect: false },
     ],
+    topic: 'Databases',
   },
   {
     question: 'How do indexes improve database performance?',
@@ -384,6 +407,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'They slow down all database operations.', isCorrect: false },
       { text: 'They are only useful for backup purposes.', isCorrect: false },
     ],
+    topic: 'Databases',
   },
   {
     question:
@@ -399,6 +423,7 @@ export const questionsMocks: CreateQuestionDto[] = [
       { text: 'Indexes only on numeric columns', isCorrect: false },
       { text: 'Indexes are not used to improve performance', isCorrect: false },
     ],
+    topic: 'Databases',
   },
   {
     question:
@@ -423,6 +448,7 @@ export const questionsMocks: CreateQuestionDto[] = [
         isCorrect: false,
       },
     ],
+    topic: 'Databases',
   },
   {
     question: 'Can a secondary index be unique in a database table?',
@@ -443,5 +469,6 @@ export const questionsMocks: CreateQuestionDto[] = [
         isCorrect: false,
       },
     ],
+    topic: 'Databases',
   },
 ];
