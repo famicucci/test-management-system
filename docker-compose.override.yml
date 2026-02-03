@@ -1,0 +1,21 @@
+services:
+  backend:
+    develop:
+      watch:
+        - action: sync
+          path: ./quiz.backend/src
+          target: /app/src
+        - action: rebuild
+          path: ./quiz.backend/package.json
+
+  frontend:
+    develop:
+      watch:
+        - action: sync
+          path: ./quiz.frontend
+          target: /app
+          ignore:
+            - node_modules/
+            - .next/
+        - action: rebuild
+          path: ./quiz.frontend/package.json
