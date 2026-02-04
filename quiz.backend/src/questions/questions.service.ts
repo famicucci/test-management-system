@@ -13,13 +13,12 @@ export class QuestionsService {
   ) {}
 
   getQuestions(qty: number): Promise<QuestionEntity[]> {
-    // return this.questionsRepository.find({ take: qty, relations: ['options'] });
     return this.questionsRepository
-    .createQueryBuilder('question')
-    .leftJoinAndSelect('question.options', 'option')
-    .orderBy('RAND()')
-    .limit(qty)
-    .getMany();
+      .createQueryBuilder('question')
+      .leftJoinAndSelect('question.options', 'option')
+      .orderBy('RAND()')
+      .take(qty)
+      .getMany();
   }
 
   createQuestion(question: CreateQuestionDto): Promise<QuestionEntity> {
