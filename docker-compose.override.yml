@@ -3,19 +3,19 @@ services:
     develop:
       watch:
         - action: sync
-          path: ./quiz.backend/src
+          path: ./tms.backend/src
           target: /app/src
         - action: rebuild
-          path: ./quiz.backend/package.json
+          path: ./tms.backend/package.json
 
   frontend:
     develop:
       watch:
         - action: sync
-          path: ./quiz.frontend
+          path: ./tms.frontend
           target: /app
           ignore:
             - node_modules/
             - .next/
         - action: rebuild
-          path: ./quiz.frontend/package.json
+          path: ./tms.frontend/package.json
