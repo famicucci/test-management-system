@@ -1,6 +1,4 @@
-import { IsString, IsNumber, IsArray, ValidateNested } from 'class-validator';
-import { OptionDto } from './create-option.dto';
-import { Type } from 'class-transformer';
+import { IsString, IsArray, ValidateNested } from 'class-validator';
 
 export class CreateQuestionDto {
   @IsString()
@@ -8,8 +6,6 @@ export class CreateQuestionDto {
 
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => OptionDto)
-  options: OptionDto[];
 
   @IsString()
   explanation: string;
