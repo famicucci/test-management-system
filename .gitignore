@@ -12,16 +12,16 @@
 .vercel
 
 # frontend
-/quiz.frontend/node_modules
-/quiz.frontend/dist
-/quiz.frontend/build
-/quiz.frontend/.next
+/tms.frontend/node_modules
+/tms.frontend/dist
+/tms.frontend/build
+/tms.frontend/.next
 
 # backend
-/quiz.backend/node_modules
-/quiz.backend/dist
-/quiz.backend/build
-/quiz.backend/.next
+/tms.backend/node_modules
+/tms.backend/dist
+/tms.backend/build
+/tms.backend/.next
 
 
 # Yarn and PnP
