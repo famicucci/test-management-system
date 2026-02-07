@@ -1,20 +1,23 @@
+"use client";
+
 import { Table } from "@/components/Table";
-import { TestCase } from "@/interfaces/testCase";
+import useTestCase from "@/store/testCase/testCase";
+import { useEffect } from "react";
 
 const TestCases = () => {
-  const data: TestCase[] = [
-    {
-      id: 1,
-      category: "Login",
-      title: "Valid Login",
-      steps:
-        "1. Go to login page\n2. Enter valid credentials\n3. Click login button",
-      testData: "Username: user1, Password: pass123",
-      expectedResult: "User should be logged in successfully",
-      platform: "Web",
-      priority: "High",
-    },
-  ];
+  const { testCases, fetchTestCases, status } = useTestCase();
+
+  useEffect(() => {
+    fetchTestCases();
+  }, [fetchTestCases]);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (status === "failed") {
+    return <div>Error loading test cases</div>;
+  }
 
   const columns = [
     {
@@ -59,7 +62,7 @@ const TestCases = () => {
     },
   ];
 
-  return <Table data={data} columns={columns} />;
+  return <Table data={testCases} columns={columns} />;
 };
 
 export default TestCases;
