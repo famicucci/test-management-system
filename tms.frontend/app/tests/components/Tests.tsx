@@ -28,11 +28,13 @@ const Tests = () => {
       id: "id",
       name: "N°",
       selector: "id",
+      align: "center",
     },
     {
       id: "ticketId",
       name: "Ticket ID",
       selector: "ticketId",
+      align: "center",
     },
     {
       id: "qaStatus",
@@ -43,12 +45,14 @@ const Tests = () => {
     {
       id: "date",
       name: "Fecha",
+      align: "center",
       cell: (row) => <span>{new Date(row.date).toLocaleDateString()}</span>,
     },
     {
       id: "version",
       name: "Versión",
       selector: "version",
+      align: "center",
     },
     {
       id: "observations",
