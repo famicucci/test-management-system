@@ -1,14 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '../app.module';
-import { QuestionsService } from '../questions/questions.service';
-import { questionsMocks } from '../questions/mocks/questions.mock';
+import { testCasesMocks } from '../test-cases/mocks/test-cases.mock';
+import { TestCasesService } from '../test-cases/test-cases.service';
 
 async function bootstrap() {
   const app = await NestFactory.createApplicationContext(AppModule);
-  const questionsService = app.get(QuestionsService);
+  const testCasesService = app.get(TestCasesService);
 
   await Promise.all(
-    questionsMocks.map((q) => questionsService.createQuestion(q)),
+    testCasesMocks.map((q) => testCasesService.createTestCase(q)),
   );
 
   await app.close();

@@ -1,6 +1,6 @@
-import { CreateQuestionDto } from '../dtos/create-question.dto';
+import { CreateTestCasesDto } from "../dtos/create-test-case.dto";
 
-export const questionsMocks: CreateQuestionDto[] = [
+export const testCasesMocks: CreateTestCasesDto[] = [
   {
     question: 'What is JavaScript?',
     explanation:

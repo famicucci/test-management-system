@@ -1,6 +1,6 @@
 import { IsString, IsArray, ValidateNested } from 'class-validator';
 
-export class CreateQuestionDto {
+export class CreateTestCasesDto {
   @IsString()
   question: string;
 
