@@ -2,14 +2,23 @@ import { IsString, IsArray, ValidateNested } from 'class-validator';
 
 export class CreateTestCasesDto {
   @IsString()
-  question: string;
-
-  @IsArray()
-  @ValidateNested({ each: true })
+  category: string;
 
   @IsString()
-  explanation: string;
+  title: string;
 
   @IsString()
-  topic: string;
+  steps: string;
+
+  @IsString()
+  testData: string;
+
+  @IsString()
+  expectedResult: string;
+
+  @IsString()
+  platform: string;
+
+  @IsString()
+  priority: string;
 }

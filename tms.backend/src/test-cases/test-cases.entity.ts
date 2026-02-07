@@ -4,10 +4,25 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class TestCases {
   @PrimaryGeneratedColumn()
   id: number;
+
   @Column()
-  question: string;
+  category: string;
+
+  @Column()
+  title: string;
+
   @Column({ type: 'text' })
-  explanation: string;
+  steps: string;
+
   @Column()
-  topic: string;
+  testData: string;
+
+  @Column()
+  expectedResult: string;
+
+  @Column()
+  platform: string;
+
+  @Column()
+  priority: string;
 }
