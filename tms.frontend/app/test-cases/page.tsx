@@ -6,7 +6,9 @@ const Page = () => {
   return (
     <div>
       <h1>Test Cases</h1>
-      <TestCaseForm />
+      <div className="py-2">
+        <TestCaseForm />
+      </div>
       <TestCases />
     </div>
   );
