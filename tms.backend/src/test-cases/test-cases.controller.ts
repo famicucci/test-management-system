@@ -1,4 +1,12 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Query,
+} from '@nestjs/common';
 import { TestCases } from './test-cases.entity';
 import { TestCasesService } from './test-cases.service';
 import { CreateTestCasesDto } from './dtos/create-test-case.dto';
@@ -8,8 +16,8 @@ export class TestCasesController {
   constructor(private readonly testCasesService: TestCasesService) {}
 
   @Get()
-  async getTestCases(): Promise<TestCases[]> {
-    return await this.testCasesService.getTestCases();
+  async getTestCases(@Query('search') search?: string): Promise<TestCases[]> {
+    return await this.testCasesService.getTestCases(search);
   }
 
   @Post()

@@ -11,8 +11,18 @@ export class TestCasesService {
     private testCasesRepository: Repository<TestCasesEntity>,
   ) {}
 
-  getTestCases(): Promise<TestCasesEntity[]> {
-    return this.testCasesRepository.find();
+  getTestCases(search?: string): Promise<TestCasesEntity[]> {
+    if (!search) {
+      return this.testCasesRepository.find();
+    }
+
+    return this.testCasesRepository
+      .createQueryBuilder('testCase')
+      .where('testCase.title LIKE :search', { search: `%${search}%` })
+      .orWhere('testCase.category LIKE :search', { search: `%${search}%` })
+      .orWhere('testCase.platform LIKE :search', { search: `%${search}%` })
+      .orWhere('testCase.priority LIKE :search', { search: `%${search}%` })
+      .getMany();
   }
 
   createTestCase(testCase: CreateTestCasesDto): Promise<TestCasesEntity> {
