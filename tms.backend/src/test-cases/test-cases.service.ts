@@ -22,4 +22,8 @@ export class TestCasesService {
 
     return this.testCasesRepository.save(testCaseEntity);
   }
+
+  async deleteTestCase(id: string): Promise<void> {
+    await this.testCasesRepository.delete(id);
+  }
 }

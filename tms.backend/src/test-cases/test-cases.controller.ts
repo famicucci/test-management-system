@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { TestCases } from './test-cases.entity';
 import { TestCasesService } from './test-cases.service';
 import { CreateTestCasesDto } from './dtos/create-test-case.dto';
@@ -15,5 +15,10 @@ export class TestCasesController {
   @Post()
   createTestCase(@Body() testCase: CreateTestCasesDto) {
     return this.testCasesService.createTestCase(testCase);
+  }
+
+  @Delete(':id')
+  deleteTestCase(@Param('id') id: string) {
+    return this.testCasesService.deleteTestCase(id);
   }
 }
