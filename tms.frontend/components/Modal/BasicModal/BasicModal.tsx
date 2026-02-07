@@ -12,7 +12,7 @@ interface BasicModalProps {
 
 const BasicModal = ({ children, title, open, hide }: BasicModalProps) => {
   return (
-    <Modal isOpen={open} fullWidth>
+    <Modal isOpen={open}>
       <ModalHeader onClose={hide}>
         <Typography variant="h5" className="m-0">
           {title}
