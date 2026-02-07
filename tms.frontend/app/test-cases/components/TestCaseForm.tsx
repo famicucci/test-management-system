@@ -46,12 +46,12 @@ const SelectProductsSearchForm = ({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-row items-center justify-start gap-4"
+      className="flex flex-col items-stretch gap-4 min-w-[500px]"
     >
-      <Input name="category" control={control} placeholder="Categoria" />
       <Input name="title" control={control} placeholder="Titulo" />
       <Input name="steps" control={control} placeholder="Pasos" />
       <Input name="testData" control={control} placeholder="Datos de prueba" />
+      <Input name="category" control={control} placeholder="Categoria" />
       <Input
         name="expectedResult"
         control={control}
@@ -76,7 +76,7 @@ const SelectProductsSearchForm = ({
           { value: "Alta", label: "Alta" },
         ]}
       />
-      <Button type="submit" variant="primary">
+      <Button type="submit" variant="primary" className="mt-2">
         Crear
       </Button>
     </form>

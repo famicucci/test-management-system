@@ -5,6 +5,7 @@ import TestCaseForm from "./components/TestCaseForm";
 import { useModal } from "@/contexts/ModalContext";
 import { Button } from "@/components/Button";
 import { Typography } from "@/components/Typography";
+import { ModalContent } from "@/components/Modal/ModalContent";
 
 const Page = () => {
   const { show, hide } = useModal();
@@ -17,7 +18,9 @@ const Page = () => {
           <Button
             onClick={() =>
               show("Crear un Test Case", () => (
-                <TestCaseForm onSubmit={() => hide()} />
+                <ModalContent>
+                  <TestCaseForm onSubmit={() => hide()} />
+                </ModalContent>
               ))
             }
           >
