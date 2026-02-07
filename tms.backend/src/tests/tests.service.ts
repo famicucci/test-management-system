@@ -11,10 +11,22 @@ export class TestsService {
     private testsRepository: Repository<TestsEntity>,
   ) {}
 
-  getTests(): Promise<TestsEntity[]> {
-    return this.testsRepository.find({
-      relations: ['testCase'],
-    });
+  getTests(search?: string): Promise<TestsEntity[]> {
+    if (!search) {
+      return this.testsRepository.find({
+        relations: ['testCase'],
+      });
+    }
+
+    return this.testsRepository
+      .createQueryBuilder('test')
+      .leftJoinAndSelect('test.testCase', 'testCase')
+      .where('test.ticketId LIKE :search', { search: `%${search}%` })
+      .orWhere('test.qaStatus LIKE :search', { search: `%${search}%` })
+      .orWhere('test.version LIKE :search', { search: `%${search}%` })
+      .orWhere('test.observations LIKE :search', { search: `%${search}%` })
+      .orWhere('testCase.title LIKE :search', { search: `%${search}%` })
+      .getMany();
   }
 
   async createTest(test: CreateTestDto): Promise<TestsEntity> {
