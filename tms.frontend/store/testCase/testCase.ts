@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { TestCaseState } from "./types";
+import { CreateTestCaseInput, TestCaseState } from "./types";
 import { TestCase } from "@/interfaces/testCase";
 
 const useTestCase = create<TestCaseState>((set) => ({
@@ -16,6 +16,32 @@ const useTestCase = create<TestCaseState>((set) => ({
       });
     } catch (err) {
       set({ status: "failed" });
+    }
+  },
+  createTestCase: async (payload: CreateTestCaseInput) => {
+    set({ status: "loading" });
+    try {
+      const res = await fetch("http://localhost:4000/test-cases", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to create test case");
+      }
+
+      const created: TestCase = await res.json();
+
+      set((state) => ({
+        testCases: [...state.testCases, created],
+        status: "succeeded",
+      }));
+
+      return created;
+    } catch (err) {
+      set({ status: "failed" });
+      throw err;
     }
   },
 }));

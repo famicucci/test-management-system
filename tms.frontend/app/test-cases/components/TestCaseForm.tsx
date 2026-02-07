@@ -2,12 +2,11 @@
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { Select } from "@/components/Select";
+import useTestCase from "@/store/testCase/testCase";
 import { useForm } from "react-hook-form";
 
 const SelectProductsSearchForm = () => {
-  const onSubmit = (data: any) => {
-    console.log(data);
-  };
+  const { createTestCase } = useTestCase();
 
   const defaultValues = {
     category: "",
@@ -19,10 +18,23 @@ const SelectProductsSearchForm = () => {
     priority: "",
   };
 
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit, reset } = useForm({
     defaultValues,
     // resolver: yupResolver(schema),
   });
+
+  const onSubmit = async (data: any) => {
+    await createTestCase({
+      category: data.category,
+      title: data.title,
+      steps: data.steps,
+      testData: data.testData,
+      expectedResult: data.expectedResult,
+      platform: data.platform,
+      priority: data.priority,
+    });
+    reset();
+  };
 
   return (
     <form
