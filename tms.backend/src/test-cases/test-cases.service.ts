@@ -11,13 +11,8 @@ export class TestCasesService {
     private testCasesRepository: Repository<TestCasesEntity>,
   ) {}
 
-  getTestCases(qty: number): Promise<TestCasesEntity[]> {
-    return this.testCasesRepository
-      .createQueryBuilder('testCase')
-      .leftJoinAndSelect('testCase.options', 'option')
-      .orderBy('RAND()')
-      .take(qty)
-      .getMany();
+  getTestCases(): Promise<TestCasesEntity[]> {
+    return this.testCasesRepository.find();
   }
 
   createTestCase(testCase: CreateTestCasesDto): Promise<TestCasesEntity> {
