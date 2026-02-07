@@ -1,4 +1,4 @@
-import { Question } from "@/interfaces/question";
+import { Question } from "@/interfaces/testCase";
 
 export const questionsMocks: Omit<Question, "selectedAnswer">[] = [
   {

@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { QuizState } from "./types";
-import { Question } from "@/interfaces/question";
+import { Question } from "@/interfaces/testCase";
 
 const useQuiz = create<QuizState>((set) => ({
   questions: [],
@@ -17,7 +17,7 @@ const useQuiz = create<QuizState>((set) => ({
       questions: state.questions.map((question) =>
         question.id === questionId
           ? { ...question, selectedAnswer: answeredOptionId }
-          : question
+          : question,
       ),
     })),
   fetchQuestions: async () => {
