@@ -2,6 +2,8 @@
 
 import { IconButton } from "@/components/IconButton";
 import { Table } from "@/components/Table";
+import { Column } from "@/components/Table/types";
+import { TestCase } from "@/interfaces/testCase";
 import useTestCase from "@/store/testCase/testCase";
 import { useEffect } from "react";
 import { Trash } from "react-feather";
@@ -21,50 +23,52 @@ const TestCases = () => {
     return <div>Error loading test cases</div>;
   }
 
-  const columns = [
+  const columns: Column<TestCase>[] = [
     {
       id: "id",
-      name: "ID",
+      name: "N°",
       selector: "id",
     },
     {
       id: "category",
-      name: "Category",
+      name: "Categoría",
       selector: "category",
     },
     {
       id: "title",
-      name: "Title",
+      name: "Título",
       selector: "title",
     },
     {
       id: "steps",
-      name: "Steps",
+      name: "Pasos",
       selector: "steps",
     },
     {
       id: "testData",
-      name: "Test Data",
+      name: "Datos de Prueba",
       selector: "testData",
     },
     {
       id: "expectedResult",
-      name: "Expected Result",
+      name: "Resultado Esperado",
       selector: "expectedResult",
     },
     {
       id: "platform",
-      name: "Platform",
+      name: "Plataforma",
       selector: "platform",
+      align: "center",
     },
     {
       id: "priority",
-      name: "Priority",
+      name: "Prioridad",
       selector: "priority",
+      align: "center",
     },
     {
       id: "actions",
-      name: "Actions",
+      name: "",
       cell: (row: any) => (
         <IconButton
           variant="secondary"
