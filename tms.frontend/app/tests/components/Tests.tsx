@@ -1,0 +1,81 @@
+"use client";
+
+import { IconButton } from "@/components/IconButton";
+import { Table } from "@/components/Table";
+import { Column } from "@/components/Table/types";
+import { Test } from "@/interfaces/test";
+import useTest from "@/store/test/test";
+import { useEffect } from "react";
+import { Trash } from "react-feather";
+
+const Tests = () => {
+  const { tests, fetchTests, status, deleteTest } = useTest();
+
+  useEffect(() => {
+    fetchTests();
+  }, [fetchTests]);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (status === "failed") {
+    return <div>Error loading tests</div>;
+  }
+
+  const columns: Column<Test>[] = [
+    {
+      id: "id",
+      name: "N°",
+      selector: "id",
+    },
+    {
+      id: "ticketId",
+      name: "Ticket ID",
+      selector: "ticketId",
+    },
+    {
+      id: "qaStatus",
+      name: "Estado QA",
+      selector: "qaStatus",
+      align: "center",
+    },
+    {
+      id: "date",
+      name: "Fecha",
+      cell: (row) => <span>{new Date(row.date).toLocaleDateString()}</span>,
+    },
+    {
+      id: "version",
+      name: "Versión",
+      selector: "version",
+    },
+    {
+      id: "observations",
+      name: "Observaciones",
+      selector: "observations",
+    },
+    {
+      id: "testCase",
+      name: "Caso de Prueba",
+      cell: (row) => <span>{row.testCase.title}</span>,
+    },
+    {
+      id: "actions",
+      name: "",
+      cell: (row) => (
+        <IconButton
+          variant="secondary"
+          size="medium"
+          onClick={() => deleteTest(row.id)}
+        >
+          <Trash size={20} />
+        </IconButton>
+      ),
+    },
+  ];
+
+  return <Table data={tests} columns={columns} />;
+};
+
+export default Tests;
