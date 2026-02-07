@@ -32,4 +32,8 @@ export class TestsService {
       relations: ['testCase'],
     }) as Promise<TestsEntity>;
   }
+
+  async deleteTest(id: string): Promise<void> {
+    await this.testsRepository.delete(id);
+  }
 }
