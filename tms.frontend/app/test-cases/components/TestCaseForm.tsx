@@ -5,7 +5,11 @@ import { Select } from "@/components/Select";
 import useTestCase from "@/store/testCase/testCase";
 import { useForm } from "react-hook-form";
 
-const SelectProductsSearchForm = () => {
+const SelectProductsSearchForm = ({
+  onSubmit: onAfterSubmit,
+}: {
+  onSubmit?: () => void;
+}) => {
   const { createTestCase } = useTestCase();
 
   const defaultValues = {
@@ -33,7 +37,10 @@ const SelectProductsSearchForm = () => {
       platform: data.platform,
       priority: data.priority,
     });
+
     reset();
+
+    onAfterSubmit && onAfterSubmit();
   };
 
   return (

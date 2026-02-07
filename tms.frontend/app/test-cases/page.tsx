@@ -1,13 +1,29 @@
+"use client";
 import React from "react";
 import TestCases from "./components/TestCases";
 import TestCaseForm from "./components/TestCaseForm";
+import { useModal } from "@/contexts/ModalContext";
+import { Button } from "@/components/Button";
+import { Typography } from "@/components/Typography";
 
 const Page = () => {
+  const { show, hide } = useModal();
+
   return (
     <div>
-      <h1>Test Cases</h1>
-      <div className="py-2">
-        <TestCaseForm />
+      <div className="flex items-center justify-between py-2">
+        <Typography variant="h3">Test Cases</Typography>
+        <div>
+          <Button
+            onClick={() =>
+              show("Crear un Test Case", () => (
+                <TestCaseForm onSubmit={() => hide()} />
+              ))
+            }
+          >
+            Crear Test Case
+          </Button>
+        </div>
       </div>
       <TestCases />
     </div>
