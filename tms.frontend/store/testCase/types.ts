@@ -7,6 +7,7 @@ export interface TestCaseState {
   status: TestCaseStatus;
   fetchTestCases: () => Promise<void>;
   createTestCase: (payload: CreateTestCaseInput) => Promise<TestCase>;
+  deleteTestCase: (id: number) => Promise<void>;
 }
 
 export type TestCaseStatus = "iddle" | "loading" | "succeeded" | "failed";

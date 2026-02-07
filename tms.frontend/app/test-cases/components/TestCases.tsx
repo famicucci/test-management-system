@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { Trash } from "react-feather";
 
 const TestCases = () => {
-  const { testCases, fetchTestCases, status } = useTestCase();
+  const { testCases, fetchTestCases, status, deleteTestCase } = useTestCase();
 
   useEffect(() => {
     fetchTestCases();
@@ -69,7 +69,7 @@ const TestCases = () => {
         <IconButton
           variant="secondary"
           size="medium"
-          onClick={() => console.log("Edit", row.id)}
+          onClick={() => deleteTestCase(row.id)}
         >
           <Trash size={20} />
         </IconButton>

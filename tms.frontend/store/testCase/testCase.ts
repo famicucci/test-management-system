@@ -44,6 +44,26 @@ const useTestCase = create<TestCaseState>((set) => ({
       throw err;
     }
   },
+  deleteTestCase: async (id: number) => {
+    set({ status: "loading" });
+    try {
+      const res = await fetch(`http://localhost:4000/test-cases/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to delete test case");
+      }
+
+      set((state) => ({
+        testCases: state.testCases.filter((testCase) => testCase.id !== id),
+        status: "succeeded",
+      }));
+    } catch (err) {
+      set({ status: "failed" });
+      throw err;
+    }
+  },
 }));
 
 export default useTestCase;
