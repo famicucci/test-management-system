@@ -34,7 +34,7 @@ const useTestCase = create<TestCaseState>((set) => ({
       const created: TestCase = await res.json();
 
       set((state) => ({
-        testCases: [...state.testCases, created],
+        testCases: [created, ...state.testCases],
         status: "succeeded",
       }));
 
