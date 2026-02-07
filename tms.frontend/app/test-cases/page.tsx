@@ -1,8 +1,7 @@
 import React from "react";
-import Quiz from "../components/Quiz/Quiz";
 
 const Page = () => {
-  return <Quiz />;
+  return <div>test cases page</div>;
 };
 
 export default Page;
