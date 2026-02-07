@@ -1,8 +1,10 @@
 "use client";
 
+import { IconButton } from "@/components/IconButton";
 import { Table } from "@/components/Table";
 import useTestCase from "@/store/testCase/testCase";
 import { useEffect } from "react";
+import { Trash } from "react-feather";
 
 const TestCases = () => {
   const { testCases, fetchTestCases, status } = useTestCase();
@@ -59,6 +61,19 @@ const TestCases = () => {
       id: "priority",
       name: "Priority",
       selector: "priority",
+    },
+    {
+      id: "actions",
+      name: "Actions",
+      cell: (row: any) => (
+        <IconButton
+          variant="secondary"
+          size="medium"
+          onClick={() => console.log("Edit", row.id)}
+        >
+          <Trash size={20} />
+        </IconButton>
+      ),
     },
   ];
 
