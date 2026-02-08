@@ -5,10 +5,12 @@ import { TestCase } from "@/interfaces/testCase";
 const useTestCase = create<TestCaseState>((set) => ({
   testCases: [],
   status: "iddle",
-  fetchTestCases: async () => {
+  fetchTestCases: async (search) => {
     set({ status: "loading" });
     try {
-      const res = await fetch("http://localhost:4000/test-cases");
+      const res = await fetch(
+        `http://localhost:4000/test-cases?search=${search}`,
+      );
       const data: TestCase[] = await res.json();
       set({
         testCases: data.map((q: any) => ({ ...q, selectedAnswer: null })),

@@ -4,6 +4,7 @@ import { Input } from "@/components/Input";
 import { Select } from "@/components/Select";
 import useTest from "@/store/test/test";
 import { useForm } from "react-hook-form";
+import TestCasesSelect from "./TestCasesSelect";
 
 const TestForm = ({ onSubmit: onAfterSubmit }: { onSubmit?: () => void }) => {
   const { createTest } = useTest();
@@ -69,6 +70,7 @@ const TestForm = ({ onSubmit: onAfterSubmit }: { onSubmit?: () => void }) => {
         control={control}
         placeholder="ID del Caso de Prueba"
       />
+      <TestCasesSelect />
       <Button type="submit" variant="primary" className="mt-2">
         Crear
       </Button>

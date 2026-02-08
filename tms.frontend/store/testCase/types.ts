@@ -5,7 +5,7 @@ export type CreateTestCaseInput = Omit<TestCase, "id">;
 export interface TestCaseState {
   testCases: TestCase[];
   status: TestCaseStatus;
-  fetchTestCases: () => Promise<void>;
+  fetchTestCases: (search: string) => Promise<void>;
   createTestCase: (payload: CreateTestCaseInput) => Promise<TestCase>;
   deleteTestCase: (id: number) => Promise<void>;
 }

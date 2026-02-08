@@ -12,7 +12,7 @@ const TestCases = () => {
   const { testCases, fetchTestCases, status, deleteTestCase } = useTestCase();
 
   useEffect(() => {
-    fetchTestCases();
+    fetchTestCases("");
   }, [fetchTestCases]);
 
   if (status === "loading") {
