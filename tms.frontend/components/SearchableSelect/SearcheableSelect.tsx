@@ -12,7 +12,8 @@ function SearchableSelect({
   onSelect,
 }: SearchableSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const { dropdownRect, dropdownAnchorRef } = useDropdownPosition(isOpen);
+  const { dropdownRect, dropdownAnchorRef, positionAbove } =
+    useDropdownPosition(isOpen);
 
   const handleInputClick = () => {
     setIsOpen((prev) => !prev);
@@ -28,6 +29,7 @@ function SearchableSelect({
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         position={dropdownRect}
+        positionAbove={positionAbove}
       >
         {options.map((option, index) => (
           <div

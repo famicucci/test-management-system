@@ -4,5 +4,6 @@ export interface DropdownProps {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
-  position?: { left: number; top: number; width: number };
+  position?: { left: number; top: number; bottom?: number; width: number };
+  positionAbove?: boolean;
 }
