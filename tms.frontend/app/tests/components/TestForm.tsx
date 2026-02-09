@@ -65,12 +65,7 @@ const TestForm = ({ onSubmit: onAfterSubmit }: { onSubmit?: () => void }) => {
         control={control}
         placeholder="Observaciones"
       />
-      <Input
-        name="testCaseId"
-        control={control}
-        placeholder="ID del Caso de Prueba"
-      />
-      <TestCasesSelect />
+      <TestCasesSelect name="testCaseId" control={control} />
       <Button type="submit" variant="primary" className="mt-2">
         Crear
       </Button>

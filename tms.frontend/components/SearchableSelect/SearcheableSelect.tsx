@@ -10,6 +10,9 @@ function SearchableSelect({
   onVisible,
   hasMore,
   onSelect,
+  value,
+  searchValue,
+  onClick,
 }: SearchableSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { dropdownRect, dropdownAnchorRef, positionAbove } =
@@ -22,7 +25,14 @@ function SearchableSelect({
   return (
     <div className="w-full" ref={dropdownAnchorRef}>
       <div onClick={handleInputClick}>
-        <InputView placeholder="Seleccionar cliente..." onChange={onChange} />
+        <InputView
+          placeholder="ID del Caso de Prueba"
+          value={
+            searchValue || options.find((o) => o.value === value)?.label || ""
+          }
+          onChange={onChange}
+          onClick={onClick}
+        />
       </div>
 
       <Dropdown

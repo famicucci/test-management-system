@@ -1,10 +1,19 @@
 import { SearcheableSelect } from "@/components/SearchableSelect";
 import useTestCase from "@/store/testCase/testCase";
 import { useEffect, useState } from "react";
+import { useController } from "react-hook-form";
 
-const TestCasesSelect = () => {
+const TestCasesSelect = ({ name, control }: { name: string; control: any }) => {
   const { testCases, fetchTestCases } = useTestCase();
   const [search, setSearch] = useState("");
+
+  const {
+    field,
+    // fieldState: { invalid, error },
+  } = useController({
+    name,
+    control,
+  });
 
   useEffect(() => {
     fetchTestCases(search);
@@ -16,12 +25,22 @@ const TestCasesSelect = () => {
         value: tc.id.toString(),
         label: tc.title,
       }))}
+      value={field.value}
+      searchValue={search}
+      onClick={() => {
+        field.onChange("");
+        setSearch("");
+      }}
       onChange={(e) => {
+        setSearch(e.target.value);
         setTimeout(() => {
-          setSearch(e.target.value);
+          fetchTestCases(e.target.value);
         }, 1500);
       }}
-      onSelect={() => {}}
+      onSelect={(value) => {
+        field.onChange(value);
+        setSearch("");
+      }}
       onVisible={async () => {}}
       hasMore={false}
     />

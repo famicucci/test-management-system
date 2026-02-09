@@ -6,4 +6,7 @@ export interface SearchableSelectProps {
   onVisible: () => Promise<void>;
   hasMore: boolean;
   onSelect: (customerId: string) => void;
+  value: string;
+  searchValue: string;
+  onClick?: () => void;
 }
