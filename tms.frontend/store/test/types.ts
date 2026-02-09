@@ -12,4 +12,10 @@ export interface TestState {
   deleteTest: (id: number) => Promise<void>;
 }
 
-export type TestStatus = "iddle" | "loading" | "succeeded" | "failed";
+export type TestStatus =
+  | "iddle"
+  | "loading"
+  | "succeeded"
+  | "failedCreatingTest"
+  | "failedDeletingTest"
+  | "failedFetchingTests";

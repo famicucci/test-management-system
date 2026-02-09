@@ -15,7 +15,7 @@ const useTest = create<TestState>((set) => ({
         status: "succeeded",
       });
     } catch (err) {
-      set({ status: "failed" });
+      set({ status: "failedFetchingTests" });
     }
   },
   createTest: async (payload: CreateTestInput) => {
@@ -40,7 +40,7 @@ const useTest = create<TestState>((set) => ({
 
       return created;
     } catch (err) {
-      set({ status: "failed" });
+      set({ status: "failedCreatingTest" });
       throw err;
     }
   },
@@ -60,7 +60,7 @@ const useTest = create<TestState>((set) => ({
         status: "succeeded",
       }));
     } catch (err) {
-      set({ status: "failed" });
+      set({ status: "failedDeletingTest" });
       throw err;
     }
   },

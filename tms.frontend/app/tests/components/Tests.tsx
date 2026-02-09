@@ -19,7 +19,7 @@ const Tests = () => {
     return <div>Loading...</div>;
   }
 
-  if (status === "failed") {
+  if (status === "failedFetchingTests") {
     return <div>Error loading tests</div>;
   }
 
