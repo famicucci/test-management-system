@@ -38,7 +38,7 @@ const IconButton: React.FC<ButtonProps> = ({
         ${fullwidth && variant !== "tertiary" ? "w-full" : ""}
         ${disabled ? disabledStyles[variant] : availableVariants[variant]}
         ${availableSizes[size]}
-        ${className}`}
+        ${className} cursor-pointer`}
       disabled={disabled}
     >
       {children}
