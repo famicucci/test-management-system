@@ -25,7 +25,7 @@ const TestForm = ({ onSubmit: onAfterSubmit }: { onSubmit?: () => void }) => {
   const onSubmit = async (data: any) => {
     await createTest({
       ticketId: data.ticketId,
-      qaStatus: data.qaStatus,
+      result: data.qaStatus,
       date: data.date,
       version: data.version,
       observations: data.observations,

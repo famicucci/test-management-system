@@ -5,7 +5,7 @@ export class CreateTestDto {
   ticketId: string;
 
   @IsString()
-  qaStatus: string;
+  result: string;
 
   @IsDateString()
   date: string;

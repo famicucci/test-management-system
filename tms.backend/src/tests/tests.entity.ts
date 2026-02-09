@@ -16,7 +16,7 @@ export class Tests {
   ticketId: string;
 
   @Column()
-  qaStatus: string;
+  result: string;
 
   @Column()
   date: Date;

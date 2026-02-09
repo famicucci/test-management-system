@@ -3,7 +3,7 @@ import { TestCase } from "./testCase";
 export interface Test {
   id: number;
   ticketId: string;
-  qaStatus: string;
+  result: string;
   date: string;
   version: string;
   observations: string;

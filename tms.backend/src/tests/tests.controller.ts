@@ -22,7 +22,6 @@ export class TestsController {
 
   @Post()
   createTest(@Body() test: CreateTestDto) {
-    console.log(test);
     return this.testsService.createTest(test);
   }
 

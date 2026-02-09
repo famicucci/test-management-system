@@ -37,9 +37,9 @@ const Tests = () => {
       align: "center",
     },
     {
-      id: "qaStatus",
-      name: "Estado QA",
-      selector: "qaStatus",
+      id: "result",
+      name: "Resultado",
+      selector: "result",
       align: "center",
     },
     {
