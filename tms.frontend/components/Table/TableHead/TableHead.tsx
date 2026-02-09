@@ -10,7 +10,7 @@ export default function TableHead({ columns }: TableHeadProps<any>) {
             style={{
               width: `${column.minWidth}`,
             }}
-            className="p-3 first:rounded-tl-lg last:rounded-tr-lg"
+            className="p-3"
           >
             {column.name}
           </th>
