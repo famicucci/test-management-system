@@ -7,6 +7,7 @@ import { Typography } from "@/components/Typography";
 import { ModalContent } from "@/components/Modal/ModalContent";
 import { InputView } from "@/components/Input";
 import useTest from "@/store/test/test";
+import Menu from "@/components/Menu/Menu";
 
 const Page = () => {
   const { show, hide } = useModal();
@@ -16,9 +17,10 @@ const Page = () => {
     <div>
       <div className="flex items-center justify-between py-2">
         <div className="flex items-center justify-start">
-          <Typography variant="h3" className="mr-2">
+          <Menu />
+          {/* <Typography variant="h3" className="mr-2">
             Tests
-          </Typography>
+          </Typography> */}
           <InputView
             placeholder="Buscar..."
             onChange={(e) => {
