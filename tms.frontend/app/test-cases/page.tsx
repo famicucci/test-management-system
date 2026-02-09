@@ -16,7 +16,7 @@ const Page = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-between py-2">
+      <div className="flex items-center justify-between py-2 px-2">
         <div className="flex items-center justify-start">
           <Menu />
           {/* <Typography variant="h3" className="mr-2">
