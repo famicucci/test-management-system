@@ -9,6 +9,15 @@ export class TestCases {
   category: string;
 
   @Column()
+  testType: string;
+
+  @Column()
+  preconditions: string;
+
+  @Column()
+  scope: string;
+
+  @Column()
   title: string;
 
   @Column({ type: 'text' })
