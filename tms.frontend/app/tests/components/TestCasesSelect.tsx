@@ -16,8 +16,8 @@ const TestCasesSelect = ({ name, control }: { name: string; control: any }) => {
   });
 
   useEffect(() => {
-    fetchTestCases(search);
-  }, [fetchTestCases, search]);
+    fetchTestCases("");
+  }, []);
 
   return (
     <SearcheableSelect
