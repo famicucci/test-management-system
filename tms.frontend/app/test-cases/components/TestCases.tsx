@@ -9,11 +9,12 @@ import { useEffect } from "react";
 import { Trash } from "react-feather";
 
 const TestCases = () => {
-  const { testCases, fetchTestCases, status, deleteTestCase } = useTestCase();
+  const { testCases, fetchTestCases, status, deleteTestCase, search } =
+    useTestCase();
 
   useEffect(() => {
-    fetchTestCases("");
-  }, [fetchTestCases]);
+    fetchTestCases(search);
+  }, [fetchTestCases, search]);
 
   if (status === "loading") {
     return <div>Loading...</div>;

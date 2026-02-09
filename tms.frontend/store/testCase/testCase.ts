@@ -5,6 +5,8 @@ import { TestCase } from "@/interfaces/testCase";
 const useTestCase = create<TestCaseState>((set) => ({
   testCases: [],
   status: "iddle",
+  search: "",
+  setSearch: (search) => set({ search }),
   fetchTestCases: async (search) => {
     set({ status: "loading" });
     try {
