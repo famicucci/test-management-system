@@ -2,7 +2,7 @@ import { TableHeadProps } from "./types";
 
 export default function TableHead({ columns }: TableHeadProps<any>) {
   return (
-    <thead className="bg-rose-400 text-white">
+    <thead className="bg-gray-400 text-white">
       <tr>
         {columns.map((column) => (
           <th
