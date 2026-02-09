@@ -29,6 +29,7 @@ const TestCases = () => {
       id: "id",
       name: "N°",
       selector: "id",
+      align: "center",
     },
     {
       id: "category",
