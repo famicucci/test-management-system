@@ -5,6 +5,15 @@ export class CreateTestCasesDto {
   category: string;
 
   @IsString()
+  testType: string;
+
+  @IsString()
+  preconditions: string;
+
+  @IsString()
+  scope: string;
+
+  @IsString()
   title: string;
 
   @IsString()
