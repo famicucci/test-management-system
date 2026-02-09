@@ -6,8 +6,10 @@ export type CreateTestInput = Omit<Test, "id" | "testCase"> & {
 
 export interface TestState {
   tests: Test[];
+  search: string;
   status: TestStatus;
-  fetchTests: () => Promise<void>;
+  setSearch: (search: string) => void;
+  fetchTests: (search: string) => Promise<void>;
   createTest: (payload: CreateTestInput) => Promise<Test>;
   deleteTest: (id: number) => Promise<void>;
 }

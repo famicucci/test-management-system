@@ -5,14 +5,29 @@ import { useModal } from "@/contexts/ModalContext";
 import { Button } from "@/components/Button";
 import { Typography } from "@/components/Typography";
 import { ModalContent } from "@/components/Modal/ModalContent";
+import { InputView } from "@/components/Input";
+import useTest from "@/store/test/test";
 
 const Page = () => {
   const { show, hide } = useModal();
+  const { setSearch } = useTest();
 
   return (
     <div>
       <div className="flex items-center justify-between py-2">
-        <Typography variant="h3">Tests</Typography>
+        <div className="flex items-center justify-start">
+          <Typography variant="h3" className="mr-2">
+            Tests
+          </Typography>
+          <InputView
+            placeholder="Buscar..."
+            onChange={(e) => {
+              setTimeout(() => {
+                setSearch(e.target.value);
+              }, 1000);
+            }}
+          />
+        </div>
         <div>
           <Button
             onClick={() =>

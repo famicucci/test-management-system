@@ -4,11 +4,15 @@ import { Test } from "@/interfaces/test";
 
 const useTest = create<TestState>((set) => ({
   tests: [],
+  search: "",
   status: "iddle",
-  fetchTests: async () => {
+  setSearch: (search) => set({ search }),
+  fetchTests: async (search) => {
     set({ status: "loading" });
     try {
-      const res = await fetch("http://localhost:4000/tests");
+      const res = await fetch(
+        `http://localhost:4000/tests?search=${encodeURIComponent(search)}`,
+      );
       const data: Test[] = await res.json();
       set({
         tests: data,

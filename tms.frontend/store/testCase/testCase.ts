@@ -11,7 +11,7 @@ const useTestCase = create<TestCaseState>((set) => ({
     set({ status: "loading" });
     try {
       const res = await fetch(
-        `http://localhost:4000/test-cases?search=${search}`,
+        `http://localhost:4000/test-cases?search=${encodeURIComponent(search)}`,
       );
       const data: TestCase[] = await res.json();
       set({

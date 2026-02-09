@@ -9,11 +9,11 @@ import { useEffect } from "react";
 import { Trash } from "react-feather";
 
 const Tests = () => {
-  const { tests, fetchTests, status, deleteTest } = useTest();
+  const { tests, fetchTests, status, deleteTest, search } = useTest();
 
   useEffect(() => {
-    fetchTests();
-  }, [fetchTests]);
+    fetchTests(search);
+  }, [fetchTests, search]);
 
   if (status === "loading") {
     return <div>Loading...</div>;
