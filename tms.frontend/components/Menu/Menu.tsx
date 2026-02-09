@@ -20,7 +20,7 @@ const Menu = () => {
         variant={pathname === "/test-cases" ? "tertiary" : "secondary"}
         onClick={() => router.push("/test-cases")}
       >
-        Test Cases
+        Casos de Prueba
       </Button>
     </div>
   );
