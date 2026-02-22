@@ -6,7 +6,7 @@ export class TestCases {
   id: number;
 
   @Column()
-  category: string;
+  section: string;
 
   @Column()
   testType: string;

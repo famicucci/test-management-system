@@ -2,7 +2,7 @@ import { CreateTestCasesDto } from '../dtos/create-test-case.dto';
 
 export const testCasesMocks: CreateTestCasesDto[] = [
   {
-    category: 'Functional',
+    section: 'Functional',
     testType: 'Positive',
     preconditions: 'User is on the login page',
     scope: 'Login functionality',

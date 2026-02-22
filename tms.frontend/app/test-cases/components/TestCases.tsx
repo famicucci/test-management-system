@@ -32,9 +32,9 @@ const TestCases = () => {
       align: "center",
     },
     {
-      id: "category",
-      name: "Categoría",
-      selector: "category",
+      id: "section",
+      name: "Sección",
+      selector: "section",
     },
     {
       id: "title",
@@ -46,11 +46,11 @@ const TestCases = () => {
       name: "Pasos",
       selector: "steps",
     },
-    {
-      id: "testData",
-      name: "Datos de Prueba",
-      selector: "testData",
-    },
+    // {
+    //   id: "testData",
+    //   name: "Datos de Prueba",
+    //   selector: "testData",
+    // },
     {
       id: "expectedResult",
       name: "Resultado Esperado",

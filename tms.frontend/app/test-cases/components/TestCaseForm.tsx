@@ -13,7 +13,7 @@ const SelectProductsSearchForm = ({
   const { createTestCase } = useTestCase();
 
   const defaultValues = {
-    category: "",
+    section: "",
     title: "",
     steps: "",
     testData: "",
@@ -29,7 +29,7 @@ const SelectProductsSearchForm = ({
 
   const onSubmit = async (data: any) => {
     await createTestCase({
-      category: data.category,
+      section: data.section,
       title: data.title,
       steps: data.steps,
       testData: data.testData,
@@ -51,7 +51,7 @@ const SelectProductsSearchForm = ({
       <Input name="title" control={control} placeholder="Titulo" />
       <Input name="steps" control={control} placeholder="Pasos" />
       <Input name="testData" control={control} placeholder="Datos de prueba" />
-      <Input name="category" control={control} placeholder="Categoria" />
+      <Input name="section" control={control} placeholder="Sección" />
       <Input
         name="expectedResult"
         control={control}

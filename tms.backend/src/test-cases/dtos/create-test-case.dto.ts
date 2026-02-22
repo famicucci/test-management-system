@@ -2,7 +2,7 @@ import { IsString } from 'class-validator';
 
 export class CreateTestCasesDto {
   @IsString()
-  category: string;
+  section: string;
 
   @IsString()
   testType: string;

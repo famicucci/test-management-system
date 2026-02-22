@@ -1,6 +1,6 @@
 export interface TestCase {
   id: number;
-  category: string;
+  section: string;
   title: string;
   steps: string;
   testData: string;
